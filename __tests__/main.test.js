@@ -6,7 +6,7 @@ describe('#main()', () => {
   const requestWeatherDataMock = jest.fn();
   const getWeatherStateMock = jest.fn(() => 'myawesomeweatherstate');
 
-  let services = {
+  const services = {
     openweather: {
       requestWeatherData: requestWeatherDataMock,
       getWeatherState: getWeatherStateMock,
