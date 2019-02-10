@@ -7,8 +7,8 @@ const services = {
 
 export const getHandler = (services) => async (city = 'moscow', serviceName = 'openweather') => {
   const myAwesomeService = services[serviceName] || services.metaweather;
-  await myAwesomeService.requestWeatherData(city);
-  return myAwesomeService.getWeatherState();
+  const weather = await myAwesomeService(city);
+  return weather;
 };
 
 export default getHandler(services);
